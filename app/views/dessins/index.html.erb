@@ -1,0 +1,7 @@
+<h1>Dessin</h1>
+
+<ul>
+  <% @dessins.each do |dessin| %>
+    <li><%= link_to dessin.name, dessin_path(dessin)  %></li>
+  <% end %>
+</ul>

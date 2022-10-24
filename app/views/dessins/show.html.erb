@@ -1,0 +1,9 @@
+<h1><%= @dessin.name  %></h1>
+
+<p>Description: <%= @dessin.description  %></p>
+
+<%= link_to "Back", dessins_path(@dessin)  %>
+<%= link_to "Delete",
+  dessins_path(@dessin),
+  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+%>
