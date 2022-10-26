@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'reviews/new'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
@@ -10,5 +11,8 @@ Rails.application.routes.draw do
   # get "dessins/:id", to: "dessins#show", as: :dessin
   # patch "dessins/:id", to: "dessins#update"
   # delete "dessins/:id", to: "dessins#destroy"
-  resources :dessins
+  resources :dessins do
+    resources :reviews, only: [:index, :new, :create]
+  end
+  resources :reviews, only: [:show, :edit, :update, :destroy]
 end
