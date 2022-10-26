@@ -1,5 +1,7 @@
 <h1>Dessin</h1>
 
+<%= link_to "Create new manga", new_dessin_path(@new_dessin)  %>
+
 <ul>
   <% @dessins.each do |dessin| %>
     <li><%= link_to dessin.name, dessin_path(dessin)  %></li>

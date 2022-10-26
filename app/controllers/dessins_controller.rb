@@ -1,11 +1,12 @@
 class DessinsController < ApplicationController
+  before_action :set_dessin, only: [:show, :edit, :update, :destroy]
 
   def index
     @dessins = Dessin.all
   end
 
   def show
-    @dessin = Dessin.find(params[:id])
+    # @dessin = Dessin.find(params[:id])
   end
 
   def new
@@ -19,22 +20,26 @@ class DessinsController < ApplicationController
   end
 
   def edit
-    @dessin = Dessin.find(params[:id])
+    # @dessin = Dessin.find(params[:id])
   end
 
   def update
-    @dessin = Dessin.find(params[:id])
+    # @dessin = Dessin.find(params[:id])
     @dessin.update(dessin_params)
     redirect_to dessins_path(@dessin)
   end
 
   def destroy
-    @dessin = Dessin.find(params[:id])
+    # @dessin = Dessin.find(params[:id])
     @dessin.destroy
-    redirect_to dessin_path, status: :see_other
+    redirect_to dessins_path, status: :see_other
   end
 
   private
+
+  def set_dessin
+    @dessin = Dessin.find(params[:id])
+  end
 
   def dessin_params
     params.require(:dessin).permit(:name, :description)
