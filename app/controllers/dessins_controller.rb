@@ -26,7 +26,7 @@ class DessinsController < ApplicationController
   def update
     # @dessin = Dessin.find(params[:id])
     @dessin.update(dessin_params)
-    redirect_to dessins_path(@dessin)
+    redirect_to dessin_path(@dessin)
   end
 
   def destroy
