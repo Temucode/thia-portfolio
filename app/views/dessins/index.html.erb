@@ -1,9 +1,19 @@
-<h1>Dessin</h1>
+<div class="container index">
+  <h1>Dessin</h1>
+  <%= link_to "Create new manga", new_dessin_path(@new_dessin)  %>
 
-<%= link_to "Create new manga", new_dessin_path(@new_dessin)  %>
-
-<ul>
-  <% @dessins.each do |dessin| %>
-    <li><%= link_to dessin.name, dessin_path(dessin)  %></li>
-  <% end %>
-</ul>
+  <div class="cards">
+    <ul>
+      <% @dessins.each do |dessin| %>
+        <div class="card-trip">
+          <%# <%= image_tag dessin.image %>
+            <div class="card-trip-infos">
+              <div>
+                <li><%= link_to dessin.name, dessin_path(dessin)  %></li>
+              </div>
+            </div>
+        </div>
+      <% end %>
+    </ul>
+  </div>
+</div>
