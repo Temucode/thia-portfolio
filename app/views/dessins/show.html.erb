@@ -1,20 +1,21 @@
-<h1><%= @dessin.name  %></h1>
-<%= link_to "Edit", edit_dessin_path(@dessin) %>
-<p>Description: <%= @dessin.description  %></p>
-<%= link_to "Back", dessins_path(@dessin)  %>
-<%= link_to "Delete", dessin_path(@dessin),
-  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
-%>
-
 <div class="container">
-<%= link_to "Create new comment", new_dessin_review_path(@dessin) %>
-  <p><strong>Reviews</strong></p>
-  <ul class="list-group">
-    <% @dessin.reviews.each do |review| %>
-      <li class="list-group-item">
-        <%= review.content %>
-        <%= link_to "Delete", review_path(review), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
-      </li>
-    <% end %>
-  </ul>
+  <h1><%= @dessin.name  %></h1>
+  <%= link_to "Edit", edit_dessin_path(@dessin) %>
+  <p>Description: <%= @dessin.description  %></p>
+  <%= link_to "Back", dessins_path(@dessin)  %>
+  <%= link_to "Delete", dessin_path(@dessin),
+    data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+  %>
+  <div>
+    <%= link_to "Create new comment", new_dessin_review_path(@dessin) %>
+      <p><strong>Reviews</strong></p>
+      <ul class="list-group">
+        <% @dessin.reviews.each do |review| %>
+          <li class="list-group-item">
+            <%= review.content %>
+            <%= link_to "Delete", review_path(review), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+          </li>
+        <% end %>
+      </ul>
+  </div>
 </div>
