@@ -4,3 +4,20 @@
 @import "form_legend_clear";
 @import "navbar";
 @import "card";
+
+.top {
+  margin-top: 100px;
+}
+
+.button {
+  width: 1280px;
+  margin-top: 50px;
+  display: flex;
+  justify-content: end
+}
+
+// .cards {
+//   display: grid;
+//   grid-template-columns: 1fr 1fr 1fr;
+//   grid-gap: 16px;
+// }

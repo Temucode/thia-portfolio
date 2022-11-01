@@ -1,19 +1,23 @@
-<div class="container index">
-  <h1>Dessin</h1>
-  <%= link_to "Create new manga", new_dessin_path(@new_dessin)  %>
+<div class="container">
+  <div class="top d-flex justify-content flex-start">
+    <div class="title">
+      <h1>Portfolio</h1>
+    </div>
+    <div class="button">
+      <button class="btn btn-primary">
+        <%= link_to "Create new manga", new_dessin_path(@new_dessin)  %>
+      </button>
+    </div>
+  </div>
 
   <div class="cards">
-    <ul>
-      <% @dessins.each do |dessin| %>
-        <div class="card-trip">
-          <%# <%= image_tag dessin.image %>
-            <div class="card-trip-infos">
-              <div>
-                <li><%= link_to dessin.name, dessin_path(dessin)  %></li>
-              </div>
-            </div>
-        </div>
-      <% end %>
-    </ul>
+    <div class="row d-flex flex-row">
+       <div class="col-md-6 col-lg-4 mb-5">
+        <% @dessins.each do |dessin| %>
+          <img class="img-fluid" src="https://media.gettyimages.com/vectors/freehand-monster-doodle-in-full-color-vector-id842482066?s=612x612" alt="..." />
+          <%= link_to dessin.name, dessin_path(dessin) %>
+        <% end %>
+       </div>
+    </div>
   </div>
 </div>
