@@ -42,6 +42,6 @@ class DessinsController < ApplicationController
   end
 
   def dessin_params
-    params.require(:dessin).permit(:name, :description)
+    params.require(:dessin).permit(:image, :name, :description)
   end
 end
